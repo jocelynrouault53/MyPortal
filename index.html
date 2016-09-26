@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html lang="en" data-ng-app="home">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Accueil</title>
+    <link rel="icon" href="images/icones/menu-home.ico" />
+    <link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/StyleSheet.css" />
+    <script type="text/javascript" src="Scripts/Script.js"></script>
+    <script type="text/javascript" src="Scripts/angular.min.js"></script>
+    <script type="text/javascript" src="Scripts/app.js"></script>
+</head>
+
+<body>
+    <div style="position: absolute; bottom: 1em; width: 100%; text-align: center; z-index: -1;">
+        <img src="images/bonhomme.gif" alt="minions" style="height: 400px;" onclick="psychedelique()">
+        <br />
+        <a href="aboutMe.html" title="About me">A propos de moi</a>
+        <!--
+            <br />
+            <a href="PHPPage.php" title="test">test</a>
+            -->
+    </div>
+    <!--Bonhomme + About me-->
+    <section class="container" data-ng-controller="PanelController as panel" style="position:relative">
+        <ul class="nav nav-pills">
+            <li data-ng-class="{ active: panel.isSelected(1)}">
+                <a href="#" data-ng-click="panel.selectTab(1)">Home</a>
+            </li>
+            <!--Home-->
+            <li data-ng-class="{ active: panel.isSelected(2)} ">
+                <a href="#" data-ng-click="panel.selectTab(2)">Mails</a>
+            </li>
+            <!--Mails-->
+            <li data-ng-class="{ active: panel.isSelected(6)}">
+                <a href="#" data-ng-click="panel.selectTab(6)">Administration</a>
+            </li>
+            <!--Administration-->
+            <li data-ng-class="{ active: panel.isSelected(9)}">
+                <a href="#" data-ng-click="panel.selectTab(9)">Professionnel</a>
+            </li>
+            <!--Professionnel-->
+            <li data-ng-class="{ active: panel.isSelected(4)}">
+                <a href="#" data-ng-click="panel.selectTab(4)">Info</a>
+            </li>
+            <!--Info-->
+            <li data-ng-class="{ active: panel.isSelected(8)}">
+                <a href="#" data-ng-click="panel.selectTab(8)">Cloud</a>
+            </li>
+            <!--Cloud-->
+            <li data-ng-class="{ active: panel.isSelected(5)}">
+                <a href="#" data-ng-click="panel.selectTab(5)">Bouger</a>
+            </li>
+            <!--Voyages-->
+            <li data-ng-class="{ active: panel.isSelected(7)}">
+                <a href="#" data-ng-click="panel.selectTab(7)">Sites && Blogs</a>
+            </li>
+            <!--Sites && Blogs-->
+            <li data-ng-class="{ active: panel.isSelected(3)}">
+                <a href="#" data-ng-click="panel.selectTab(3)">Médias</a>
+            </li>
+            <!--Médias-->
+        </ul><!--Menu-->
+        <div class="panel" data-ng-show="panel.isSelected(1)">
+            <!--Home-->
+            <ul class="list-unstyled">
+                <li>
+                    <a href="https://facebook.com" title="réseau social facebook" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img src="images/icones/facebook.png" alt="Facebook" style="height: 50px;">Facebook</a>
+                </li>
+                <!--Facebook-->
+                <li>
+                    <a href="https://www.google.fr" title="moteur de recherche google" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img src="images/icones/google.png" alt="Google" style="height: 50px;">Google</a>
+                </li>
+                <!--Google-->
+                <li>
+                    <a href="https://www.google.com/calendar/render?tab=wc" title="mon agenda" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img src="images/icones/google-agenda.png" alt="Agenda" style="height: 50px;">Agenda</a>
+                </li>
+                <!--Agenda-->
+                <li>
+                    <a href="https://translate.google.fr/?hl=fr&amptab=wT" title="traducteur de google" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="Google Traduction" src="images/icones/google-translate-icon.png" style="height: 50px;">Google Traduction</a>
+                </li>
+                <!--Google Traduction-->
+                <li>
+                    <a href="jeux.html" title="tu veux jouer?" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="jeux" src="images/icones/jeux.png" style="height: 50px;">Jeux</a>
+                </li>
+                <!--jeux-->
+            </ul>
+        </div><!--Home-->
+        <div class="panel" data-ng-show="panel.isSelected(2)">
+            <!--mails-->
+            <ul class="list-unstyled">
+                <li>
+                    <a href="https://inbox.google.com/u/0" title="google inbox" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="Inbox google" src="images/icones/inbox-logo.png" style="height: 50px;">Inbox Google</a>
+                </li>
+                <!--inbox-->
+                <li>
+                    <a href="http://imp.eilco-ulco.fr" title="messagerie de l'école" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="EILCO" src="images/icones/EIL.png" style="height: 50px;">EILCO</a>
+                </li>
+                <!--EILCO-->
+                <!--<li>
+                         <a href="http://www.laposte.net/accueil" title="messagerie laposte.net" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="Laposte" src="images/icones/logo-la-poste.png" style="height: 50px;">Laposte</a>
+                     </li>-->
+                <!--Laposte-->
+                <li>
+                    <a href="https://www.outlook.com/owa" title="messagerie outlook (hotmail)" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="outlook" src="images/icones/outlook.png" style="height: 50px;">Outlook</a>
+                </li>
+                <!--outlook-->
+                <li>
+                    <a href="http://accueil01.webmail.orange.fr/" title="site de orange (messagerie + téléphone)" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="orange" src="images/icones/Orange.png" style="height: 50px;">orange</a>
+                </li>
+                <!--orange-->
+            </ul>
+        </div><!--Mails-->
+        <div class="panel" data-ng-show="panel.isSelected(3)">
+            <!--Medias-->
+            <ul class="list-unstyled">
+                <li>
+                    <a href="https://www.youtube.com/?gl=FR" title="vidéos sur Youtube" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="Youtube" src="images/icones/youtube.png" style="height: 50px;">Youtube</a>
+                </li>
+                <li>
+                    <a href="http://pleer.com/" title="pleer" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="pleer" src="images/icones/pleer.png" style="height: 50px;">Pleer</a>
+                </li>
+                <li>
+                    <a href="Gallery.html" title="galerie de photos" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="galerie" src="images/photos/galerie.png" style="height: 50px;">galerie de photos</a>
+                </li>
+            </ul>
+        </div><!--Medias-->
+        <div class="panel" data-ng-show="panel.isSelected(4)">
+            <!--info-->
+            <ul class="list-unstyled">
+                <li>
+                    <!--Wamp-->
+                    <a href="http://127.0.0.1/" title="domaine local (mes sites web, bases de données, etc)" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="Wamp" src="images/icones/wamp.png" style="height: 50px;">Wamp</a>
+                </li>
+                <!--Wamp-->
+                <li>
+                    <!--javascript-->
+                    <a href="http://fr.openclassrooms.com/informatique/cours/dynamisez-vos-sites-web-avec-javascript" title="tuto du zéro en javascript" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="javascript" src="images/icones/JavaScript-logo.png" style="height: 50px;">javascript</a>
+                </li>
+                <!--javascript-->
+                <li>
+                    <!--C++-->
+                    <a href="http://fr.openclassrooms.com/informatique/cours/programmez-avec-le-langage-c" title="tuto du zéro en C++" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="C++" src="images/icones/icone-cpp.png" style="height: 50px;">C++</a>
+                </li>
+                <!--C++-->
+                <li>
+                    <!--Androïd-->
+                    <a href="http://fr.openclassrooms.com/informatique/cours/creez-des-applications-pour-android" title="tuto du zéro pour androïd" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="Androïd" src="images/icones/Android.png" style="height: 50px;">Androïd</a>
+                </li>
+                <!--Androïd-->
+                <li>
+                    <!--Tutos Animés-->
+                    <a href="http://www.tutoriels-animes.com" title="tutos animés sur audacity et bien d'autre logiciels pratiques" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="Tutos Animés" src="images/icones/tuto_anime.png" style="height: 50px;">Tutos Animés</a>
+                </li>
+                <!--Tutos Animés-->
+            </ul>
+        </div><!--Info-->
+        <div class="panel" data-ng-show="panel.isSelected(5)">
+            <!--Bouger-->
+            <ul class="list-unstyled">
+                <li>
+                    <a href="http://www.voyages-sncf.com" title="pour acheter un billet de train" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="Sncf" src="images/icones/SNCF.png" style="height: 50px;">voyages-sncf</a>
+                </li>
+                <!--SNCF-->
+                <li>
+                    <a href="http://www.covoiturage.fr" title="alternative en covoiturage" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="BlablaCar" src="images/icones/blablacar-logo.png" style="height: 50px;">BlablaCar</a>
+                </li>
+                <!--Blablacar-->
+                <li>
+                    <a href="https://www.waze.com/fr/" title="Waze" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="Waze" src="images/icones/waze.png" style="height: 50px;">Waze</a>
+                </li>
+                <!--Waze-->
+                <li>
+                    <a href="https://www.google.fr/maps" title="google maps" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="Google maps" src="images/icones/googleMaps.png" style="height: 50px;">Google maps</a>
+                </li>
+                <!--Google maps-->
+                <li>
+                    <a href="http://www.transpole.fr/" title="transpole" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="Transpole" src="images/icones/transpole.png" style="height: 50px;">Transpole</a>
+                </li>
+                <!--Transpole-->
+                <li>
+                    <a href="http://www.ratp.fr/" title="RATP" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="RATP" src="images/icones/RATP.png" style="height: 50px;">RATP</a>
+                </li>
+                <!--RATP-->
+                <li>
+                    <a href="http://www.yelp.fr/" title="Yelp" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="Yelp" src="images/icones/yelp.png" style="height: 50px;">Yelp</a>
+                </li>
+                <!--Yelp-->
+                <li>
+                    <!--Dejbox-->
+                    <a href="https://www.dejbox.fr/" title="Dejbox" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="Dejbox" src="images/icones/Dejbox.png" style="height: 50px;">Dejbox</a>
+                </li>
+                <!--Dejbox-->
+                <li>
+                    <!--Alloresto-->
+                    <a href="https://www.alloresto.fr/" title="Alloresto" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="Alloresto" src="images/icones/Alloresto.png" style="height: 50px;">Alloresto</a>
+                </li>
+                <!--Alloresto-->
+            </ul>
+        <!--</div>Bouger-->
+        <!--<div class="panel" data-ng-show="panel.isSelected(6)">
+            <!--Scolaire--
+            <ul class="list-unstyled">
+                <li>
+                    <a href="http://www.eilco-ulco.fr" title="site web de l'école" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="Eil" src="images/icones/EIL.png" style="height: 50px;">Eilco</a>
+                </li>
+                <!--EILCO--
+                <li>
+                    <a href="http://193.49.195.26/EILCO" title="Extranet EIL" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="Extranet EIL" src="images/icones/Extranet.png" style="height: 50px;">Extranet EIL</a>
+                </li>
+                <!--extranet EIL--
+                <li>
+                    <a href="http://www.univ-littoral.fr" title="site de l'université" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="Ulco" src="images/icones/ulco.png" style="height: 50px;">Ulco</a>
+                </li>
+                <!--ULCO--
+                <li>
+                    <a href="http://sakai.univ-littoral.fr/portal/site/~rouau001" title="pour déposer des fichiers à destination des professeurs" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="sakaï" src="images/icones/SakaiLogolg.png" style="height: 50px;">sakaï</a>
+                </li>
+                <!--sakaï--
+                <li>
+                    <a href="#" title="Lisic" onmouseover="afficherAgrandi(this); document.getElementById('lisic').hidden=false;" onmouseout="masquerAgrandi();">
+                        <img alt="Lisic" src="images/icones/logo_lisic.png" style="height: 50px;"> Lisic
+                        <span id="lisic" hidden>
+                                /~
+							    <select id="lisicProf" onchange="lisic(this.value)">
+								    <option hidden></option>
+								    <option>bouneffa</option>
+								    <option>ahmad</option>
+								    <option>dehos</option>
+							    </select>
+							    /
+							    <input type="text" id="sousDossier">
+							    <button id="boutonGo" onclick="window.location='http://www-lisic.univ-littoral.fr/~'+document.getElementById('lisicProf').value+'/'+document.getElementById('sousDossier').value">go</button>
+						    </span>
+                    </a>
+                </li>
+                <!--lisic--
+                <li>
+                    <a href="http://www.bde.eilco-ulco.fr" title="site du BDE" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="BDE" src="images/icones/BDE_NRV.png" style="height: 50px;">BDE NRV</a>
+                </li>
+                <!--BDE--
+            </ul>-->
+        </div><!--Bouger + scolaire-->
+        <div class="panel" data-ng-show="panel.isSelected(6)">
+            <!--info-->
+            <ul class="list-unstyled">
+                <li>
+                    <!--Crédit Mutuel-->
+                    <a href="https://www.creditmutuel.fr" title="pour voir mes comptes" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="Crédit Mutuel" src="images/icones/crédit mutuel.png" style="height: 50px;">Crédit Mutuel</a>
+                </li>
+                <!--Crédit Mutuel-->
+                <li>
+                    <a href="https://espaceclientv3.orange.fr/?page=gt-home-page" title="site de orange (messagerie + téléphone)" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="Orange" src="images/icones/Orange.png" style="height: 50px;">Orange</a>
+                </li>
+                <!--Orange-->
+                <li>
+                    <!--CAF-->
+                    <a href="https://www.caf.fr/" title="CAF" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="CAF" src="images/icones/caf.png" style="height: 50px;">CAF</a>
+                </li>
+                <!--CAF-->
+                <li>
+                    <!--Gras Savoye-->
+                    <a href="https://mon-espace-client.grassavoye.com/jeton/MTQ0MjgzNTE0Mw%3D%3D/111-espace-assure-sante.htm" title="Gras Savoye" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="Gras Savoye" src="images/icones/logo-Gras-Savoye.png" style="height: 50px;">Gras Savoye</a>
+                </li>
+                <!--Gras Savoye-->
+                <li>
+                    <!--Ameli-->
+                    <a href="http://www.ameli.fr/" title="Ameli" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="Ameli" src="images/icones/Ameli.png" style="height: 50px;">Ameli</a>
+                </li>
+                <!--Ameli-->
+                <li>
+                    <!--Comimob-->
+                    <a href="http://comimob.gercop-extranet.com/extranet" title="Comimob" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="Comimob" src="images/icones/Comimob.png" style="height: 50px;">Comimob</a>
+                </li>
+                <!--Comimob-->
+            </ul>
+        </div><!--Administration-->
+        <div class="panel" data-ng-show="panel.isSelected(7)">
+            <!--Sites && Blogs-->
+            <ul class="list-unstyled">
+                <li>
+                    <a href="http://jprouault.free.fr/" title="site web de Jean-Paul Rouault" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="Jean-Paul" src="images/icones/Jean-Paul.png" style="height: 50px;">site de Jean-Paul</a>
+                </li>
+                <!--Site de Jean-Paul-->
+                <li>
+                    <a href="http://bais-capnord.over-blog.com/" title="blog de Béa et Domi sur leur périple au Cap-Nord" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="Cap-Nord" src="images/icones/Nordkapp.png" style="height: 50px;">Bais - cap Nord</a>
+                </li>
+                <!--Blog cap-nord-->
+                <li>
+                    <a href="http://www.bais-mer-noire.fr/" title="Site de Béa et Domi sur leur aventure vers la mer noire" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="Mer noire" src="images/icones/Vélo.png" style="height: 50px;">Bais - Mer noire</a>
+                </li>
+                <!--site mer-noire-->
+                <li>
+                    <a href="http://labo.dezao.fr/" title="Site de Ewen D'aviau" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="Labo de Zao" src="images/icones/ewen-daviau-de-ternay.png" style="height: 50px;">Labo de Zao</a>
+                </li>
+                <!--Labo de Zao-->
+            </ul>
+        </div><!--Sites && Blogs-->
+        <div class="panel" data-ng-show="panel.isSelected(8)">
+            <!--Cloud-->
+            <ul class="list-unstyled">
+                <li>
+                    <a href="https://www.dropbox.com/home" title="Dropbox" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="Dropbox" src="images/icones/dropbox.png" style="height: 50px;">Dropbox</a>
+                </li>
+                <!--Dropbox-->
+                <li>
+                    <a href="https://drive.google.com/drive/#my-drive" title="Drive" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="Drive" src="images/icones/Drive.png" style="height: 50px;">Drive</a>
+                </li>
+                <!--Google drive-->
+                <li>
+                    <a href="http://jocelyn-nas/" title="WD MyCloud administration" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="WD MyCloud administration" src="images/icones/WDMyCloudAdmin.png" style="height: 50px;">WD MyCloud administration</a>
+                </li>
+                <!--WD MyCloud administration-->
+                <li>
+                    <a href="https://www.wd2go.com" title="WD MyCloud dossiers" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="WD MyCloud dossiers" src="images/icones/WDMyCloud.png" style="height: 50px;">WD MyCloud dossiers</a>
+                </li>
+                <!--WD MyCloud dossiers-->
+                <li>
+                    <a href="https://www.teamviewer.com/fr/" title="Teamviewer " onmouseover="afficherAgrandi(this) " onmouseout="masquerAgrandi() "><img alt="Teamviewer " src="images/icones/teamviewer.png" style="height: 50px; ">Teamviewer</a>
+                </li>       <!--Teamviewer-->
+                <li>
+                    <a href="http://www.mon-ip.com/" title="mon ip " onmouseover="afficherAgrandi(this) " onmouseout="masquerAgrandi() "><img alt="IP " src="images/icones/IP.png " style="height: 50px; ">IP GLobale</a>
+                    <!--<input id="myIP " type="text " style="border: none; width: 110px; background: none; " onload="recupererIp() " onclick="selection() " />-->
+                </li>       <!--Ip globale-->
+                <li>
+                    <!--Box ADSL-->
+                    <a href="http://192.168.1.1/" title="Box ADSL(livebox, freebox ou autre box)" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="Box ADSL(livebox, freebox ou autre box)" src="images/icones/box_adsl.png" style="height: 50px;">Box ADSL</a>
+                </li>
+                <!--Box ADSL-->
+                <!--<li>-->
+                    <!--Wake on Wan-->
+                    <!--<a href="https://www.depicus.com/wake-on-lan/woli" title="Wake on Wan" onmouseover="afficherAgrandi(this)" onmouseout="masquerAgrandi()"><img alt="IP" src="images/icones/WOW.png " style="height: 50px; ">Wake on Wan</a>-->
+                <!--</li>       <!--Wake on Wan-->
+            </ul>
+        </div><!--Cloud-->
+        <div class="panel" data-ng-show="panel.isSelected(9)">  <!--Professionnel-->
+            <ul class="list-unstyled ">
+			    <li>
+                    <a href="#" title="messagerie de SOPRA" onmouseover="afficherAgrandi(this); document.getElementById('sopra').hidden=false;" onmouseout="masquerAgrandi()"><img alt="SOPRA" src="images/icones/SOPRA.png" style="height: 50px;"> SOPRA
+                        <span id="sopra" hidden>
+                                <button onclick="window.location='http://portal.corp.sopra/Pages/default.aspx';"><img alt="SOPRA interne" src="images/boutons/63.jpg" style="height: 25px"></button>
+                                <button onclick="window.location='https://parici.soprasteria.com/';"><img alt="SOPRA externe" src="images/boutons/1418.jpg" style="height: 25px"></button>
+                            </span>
+                    </a>
+                </li>       <!--Sopra-->
+			    <li>
+                    <a href="http://www.ce-sopra.com/" title="CE SOPRA" onmouseover="afficherAgrandi(this) " onmouseout="masquerAgrandi() "><img alt="CE SOPRA" src="images/icones/CE_SOPRA.png " style="height: 50px; ">CE SOPRA</a>
+                </li>       <!--CE SOPRA-->
+                <li>
+                    <a href="https://www.linkedin.com" title="linkedin " onmouseover="afficherAgrandi(this) " onmouseout="masquerAgrandi() "><img alt="linkedin" src="images/icones/linkedin.png " style="height: 50px; ">Linkedin</a>
+                </li>       <!--Linkedin-->
+			    <li>
+                    <a href="http://www.viadeo.com" title="Viadeo " onmouseover="afficherAgrandi(this) " onmouseout="masquerAgrandi() "><img alt="Viadeo" src="images/icones/Viadeo.png " style="height: 50px; ">Viadeo</a>
+                </li>       <!--Viadeo-->
+		    </ul>
+        </div><!--Professionnel-->
+        <div style="display: inline-block; margin-left: 150px; position: relative; z-index: -2; ">
+            <img id="display" src="images/gif-psychedelique-hypnose-animation-12.gif" alt="display" style="height: 300px; max-width: fit-content;" hidden>
+        </div><!--agrandi-->
+	</section>
+
+    <!--<script type="text/javascript " src="http://l2.io/ip.js?var=myip "></script>-->
+</body>
+</html>

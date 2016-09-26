@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en" data-ng-app="home">
+    <head>
+        <meta charset="utf-8" />
+        <title>Jeux</title>
+        <link rel="icon" href="images/menu-home.ico" />
+		<link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="CSS/StyleSheet.css" />
+        <script type="text/javascript" src="Scripts/angular.min.js"></script>
+        <script type="text/javascript" src="Scripts/app.js"></script>
+    </head>
+    <body>
+        <div style="text-align: center">
+            <p>Et si on jouait à un jeu?</p>
+            <!--<section class="container" data-ng-controller="PanelController as panel" style="position:relative">
+                <ul class="nav nav-pills">
+                    <li data-ng-class="{ active: panel.isSelected(1)}">
+                        <a href="#" data-ng-click="panel.selectTab(1)">test</a>
+                    </li>
+                    <li data-ng-class="{ active: panel.isSelected(2)}">
+                        <a href="#" data-ng-click="panel.selectTab(2)">test2</a>
+                    </li>
+                </ul>
+            </section>-->
+            <span id="joueur"></span>
+            <div id="jeuDesBatonnets">
+                <p id="reglesBatonnets">c'est le jeu de Fort boyard, avec les batonnets.<br/>
+                Rappel des règles :<br/>
+                Se joue à deux joueurs, un certain nombre de batonnets (les joueurs se mettent d'accord) sont placés sur la table<br/>
+                chacun à son tour, les joueurs enlèvent 1,2 ou 3 batonnets.<br/>
+                le but de la partie est de forcer son adversaire à retirer le dernier.</p>
+                <button id="IA" onclick="choix('IA')">Joueur VS IA</button><button id="player" onclick="choix('nextPlayer')">Joueur VS Joueur</button>
+                <label id="lblInit" for="init" hidden>nombre initial de bâtonnets ? </label>
+                <input id="init" name="init" type="text" hidden/>
+                <div id="batonnets"></div>
+                <div id="enlevés"></div>
+                <img id="cache" src="images/lignes.jpg" alt="cache" hidden>
+                <button id="ButtonJaiJoue" hidden>IA commence</button>
+            </div>      <!--jeu des batonnets-->
+            <div id="jeuDuMorpion">
+                <p id="reglesMorpion">Tout le monde connait le morpion? Non?<br />
+                Rappel des règles :<br />
+                dans une grille 3x3, le but est d'aligner 3 signes identiques.<br />
+                Se joue à 2 joueurs.<br />
+                Chaque joueur à tout de rôle place son signe (croix ou rond) lui correspondant dans la grille.</p>
+                <a href="morpion.html">Joueur VS IA</a><button id="commencer" onclick="initialisation()">Commencer</button>
+                <div id="grille" hidden>
+                    <table> 
+                        <tr>
+                            <td id="A1" onclick="play(this)"></td>
+                            <td id="A2" onclick="play(this)"></td>
+                            <td id="A3" onclick="play(this)"></td>
+                        </tr>
+                        <tr>
+                            <td id="B1" onclick="play(this)"></td>
+                            <td id="B2" onclick="play(this)"></td>
+                            <td id="B3" onclick="play(this)"></td>
+                        </tr>
+                        <tr>
+                            <td id="C1" onclick="play(this)"></td>
+                            <td id="C2" onclick="play(this)"></td>
+                            <td id="C3" onclick="play(this)"></td>
+                        </tr>
+                    </table>
+                </div>
+                <!--<button onclick="test()"></button>-->
+            </div>     <!--morpion-->
+        </div>
+        <script type="text/javascript" src="Scripts/batonnets.js"></script>
+        <script type="text/javascript" src="Scripts/morpion.js"></script>
+    </body>
+</html>

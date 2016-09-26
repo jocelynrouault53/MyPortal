@@ -1,0 +1,91 @@
+<html>
+
+<head>
+
+    <title>morpion</title>
+    <link rel="icon" href="images/menu-home.ico" />
+	<link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="CSS/StyleSheet.css" />
+    <script type="text/javascript" src="Scripts/angular.min.js"></script>
+    <script type="text/javascript" src="Scripts/app.js"></script>
+    <script type="text/javascript" src="Scripts/morpion_IA.js"></script>
+    
+</head>
+
+<body>
+    <table id="grille">
+        <tr class="gridLines">
+            <td class="gridCells" onClick="joue(0,0)">
+                <img class="signe" alt="img00" id='img00' src='images/boutons/vide.gif'>
+            </td>
+            <td class="gridCells" onClick="joue(0,1)">
+                <img class="signe" alt="img01" id='img01' src='images/boutons/vide.gif'>
+            </td>
+            <td class="gridLastCol" onClick="joue(0,2)">
+                <img class="signe" alt="img02" id='img02' src='images/boutons/vide.gif'>
+            </td>
+        </tr>
+        <tr class="gridLines">
+            <td class="gridCells" onClick="joue(1,0)">
+                <img class="signe" alt="img10" id='img10' src='images/boutons/vide.gif'>
+            </td>
+            <td class="gridCells" onClick="joue(1,1)">
+                <img class="signe" alt="img11" id='img11' src='images/boutons/vide.gif'>
+            </td>
+            <td class="gridLastCol" onClick="joue(1,2)">
+                <img class="signe" alt="img12" id='img12' src='images/boutons/vide.gif'>
+            </td>
+        </tr>
+        <tr class="gridLines">
+            <td class="gridCells" onClick="joue(2,0)">
+                <img class="signe" alt="img20" id='img20' src='images/boutons/vide.gif'>
+            </td>
+            <td class="gridCells" onClick="joue(2,1)">
+                <img class="signe" alt="img21" id='img21' src='images/boutons/vide.gif'>
+            </td>
+            <td class="gridLastCol" onClick="joue(2,2)">
+                <img class="signe" alt="img22" id='img22' src='images/boutons/vide.gif'>
+            </td>
+        </tr>
+    </table>
+
+
+    <form name='score'>
+        <input type='checkbox' name='niveau' title='si tu trouves ce jeu trop facile'>plus difficile
+        <br />parties:
+
+        <table border='0'>
+            <tr style="vertical-align:middle">
+                <td style="text-align:right">jouée(s)</td>
+                <td style="text-align:center">
+                    <input type='text' name='partie' size='2' value='0'>
+                </td>
+            </tr>
+            <tr style="vertical-align:middle">
+                <td style="text-align:right">gagnée(s)</td>
+                <td style="text-align:center">
+                    <input type='text' name='J1' size='2' value='0'>
+                </td>
+            </tr>
+            <tr style="vertical-align:middle">
+                <td style="text-align:right">nulle(s)</td>
+                <td style="text-align:center">
+                    <input type='text' name='nul' size='2' value='0'>
+                </td>
+            </tr>
+            <tr style="vertical-align:middle">
+                <td style="text-align:right">perdue(s)</td>
+                <td style="text-align:center">
+                    <input type='text' name='J2' size='2' value='0'>
+                </td>
+            </tr>
+
+
+        </table>
+
+    </form>
+
+
+</body>
+
+</html>

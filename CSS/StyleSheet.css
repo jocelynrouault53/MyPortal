@@ -1,0 +1,40 @@
+body {
+    background: url("../images/photos/lignes.jpg") no-repeat fixed;
+    background-size: cover;
+}
+.panel {
+    display: inline-block;
+    vertical-align: top;
+    background: none;
+}
+#div1 {
+    width: 350px;
+    height: 70px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
+#grille {
+    text-align: center;
+    margin: 10px auto auto auto;
+    background: url("../images/icones/grille.png") no-repeat;
+    background-size: contain;
+}
+td,
+.gridCells{
+    width: 60px;
+    height: 50px;
+}
+#A3,
+#B3,
+#C3,
+.gridLastCol {
+    width: 80px;
+}
+#cache {
+    margin-top: -100px;
+    opacity: 0;
+}
+
+.signe {
+    height:40px;
+}
